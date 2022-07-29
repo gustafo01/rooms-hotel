@@ -6,12 +6,14 @@ const king = document.getElementById('king');
 const twin = document.getElementById('twin');
 const other = document.getElementById('other');
 const rest = document.getElementById('rest');
+const babyBad = document.getElementById('baby-bad');
 
 btn.addEventListener('click', function(){
     convertToArray(text.value);
     king.textContent = `King: ${kingRooms.join(', ')}`;
     twin.textContent = `Twin: ${twinRooms.join(', ')}`;
     other.textContent = `Other: ${otherRooms.join(', ')}`;
+    babyBad.textContent = `Baby Bad: ${babyBadRooms.join(', ')}`;
     rest.textContent = `Rest: ${restRooms.join(', ')}`;
 })
 // Преобразую строку в массив
@@ -30,12 +32,14 @@ function divideRooms(arr) {
     }
     console.log(roomsArray)
     sortingRoom(roomsArray);
+    findBabyBad(roomsArray);
 }
 
 let kingRooms;
 let twinRooms;
 let otherRooms;
 let restRooms;
+let babyBadRooms;
 
 // Нахожу комнаты
 function sortingRoom(roomsArr) {
@@ -63,8 +67,15 @@ function sortingRoom(roomsArr) {
         twinRooms = twinResult;
         otherRooms = otheResult;
         restRooms = restResult;
-        // findBabyBad(roomsArr)
     }
 }
 
-// function findBabyBad()
+function findBabyBad(arr) {
+    let babyBadresult = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i][4] > 0) {
+            babyBadresult.push(arr[i][0] + `(${arr[i][4]}+xBB)`);
+        }
+    }
+    babyBadRooms = babyBadresult;
+}
