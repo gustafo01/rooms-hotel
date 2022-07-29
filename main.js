@@ -7,6 +7,7 @@ const twin = document.getElementById('twin');
 const other = document.getElementById('other');
 const rest = document.getElementById('rest');
 const babyBad = document.getElementById('baby-bad');
+const numberOfRooms = document.getElementById('rooms');
 
 btn.addEventListener('click', function(){
     convertToArray(text.value);
@@ -15,6 +16,7 @@ btn.addEventListener('click', function(){
     other.textContent = `Other: ${otherRooms.join(', ')}`;
     babyBad.textContent = `Baby Bad: ${babyBadRooms.join(', ')}`;
     rest.textContent = `Rest: ${restRooms.join(', ')}`;
+    numberOfRooms.textContent = `Number of rooms: ${amountRooms.length}`
 })
 // Преобразую строку в массив
 function convertToArray(str) {
@@ -30,11 +32,13 @@ function divideRooms(arr) {
         temporaryArr = arr.slice(i, i + 5);
         roomsArray.push(temporaryArr);
     }
-    console.log(roomsArray)
+    console.log(roomsArray);
+    amountRooms = roomsArray;
     sortingRoom(roomsArray);
     findBabyBad(roomsArray);
 }
 
+let amountRooms;
 let kingRooms;
 let twinRooms;
 let otherRooms;

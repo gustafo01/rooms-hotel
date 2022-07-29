@@ -11,8 +11,11 @@ p {
 }
 
 .wrapper {
-    display: flex;
     margin: 30px;
+}
+
+.container {
+    display: flex;
 }
 
 #text {
@@ -60,4 +63,10 @@ p {
 #other {
     color: green;
     font-size: 20px;
+}
+
+#rooms {
+    color: gray;
+    font-size: 30px;
+    margin-top: 30px;
 }
