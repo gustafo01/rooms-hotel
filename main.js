@@ -9,10 +9,10 @@ const rest = document.getElementById('rest');
 
 btn.addEventListener('click', function(){
     convertToArray(text.value);
-    king.textContent = `King: ${kingRooms}`;
-    twin.textContent = `Twin: ${twinRooms}`;
-    other.textContent = `Other: ${otherRooms}`;
-    rest.textContent = `Rest: ${restRooms}`;
+    king.textContent = `King: ${kingRooms.join(', ')}`;
+    twin.textContent = `Twin: ${twinRooms.join(', ')}`;
+    other.textContent = `Other: ${otherRooms.join(', ')}`;
+    rest.textContent = `Rest: ${restRooms.join(', ')}`;
 })
 // Преобразую строку в массив
 function convertToArray(str) {
@@ -37,7 +37,7 @@ let twinRooms;
 let otherRooms;
 let restRooms;
 
-// Нахожу комнаты с пометкой King
+// Нахожу комнаты
 function sortingRoom(roomsArr) {
     let kingResult = [];
     let twinResult = [];
@@ -68,50 +68,3 @@ function sortingRoom(roomsArr) {
 }
 
 // function findBabyBad()
-
-
-// function findOtherRooms(roomsArr) {
-//     let result = [];
-//     for(let i = 0; i < roomsArr.length; i++) {
-
-//     }
-// }
-
-
-// // Нахожу комнаты с пометкой King
-// function findKing(roomsArr) {
-//     let result = [];
-//     for(let i = 0; i < roomsArr.length; i++) {
-//         if(roomsArr[i][1][roomsArr[i][1].length - 1] === 'K' || roomsArr[i][2] <= 1  && roomsArr[i][3] < 1) {
-//             result.push(roomsArr[i][0]);
-//         }
-//     }
-//     kingRooms = result
-// }
-// // Нахожу комнаты с пометкой Twin
-// function findTwin(roomsArr) {
-//     let result = [];
-//     for(let i = 0; i < roomsArr.length; i++) {
-//         if(roomsArr[i][2] == 1 && roomsArr[i][3] == 1) {
-//             result.push(roomsArr[i][0]);
-//         } else if(roomsArr[i][1][roomsArr[i][1].length - 1] === 'T' && roomsArr[i][3] > 0) {
-//             result.push(roomsArr[i][0] + `(${roomsArr[i][3]}+xEB)`);
-//         } else if(roomsArr[i][1][roomsArr[i][1].length - 1] === 'T') {
-//             result.push(roomsArr[i][0]);
-//         } else if(roomsArr[i][2] == 1 && roomsArr[i][3] > 1) {
-//             result.push(roomsArr[i][0] + `(${roomsArr[i][3] - 1}+xEB)`);
-//         } else if(roomsArr[i][3] > 0) {
-//             otherRooms.push(roomsArr[i][0] + `(${roomsArr[i][3]}+xEB)`);
-//         }
-//     }
-//     twinRooms = result
-// }
-
-// function findOtherRooms(roomsArr) {
-//     let result = [];
-//     for(let i = 0; i < roomsArr.length; i++) {
-
-//     }
-// }
-
-

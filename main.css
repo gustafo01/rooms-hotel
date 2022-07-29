@@ -1,5 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    margin: 30px;
+}
+
+#text {
+    resize: none;
+    width: 320px;
+    height: 600px;
+    font-size: 14px;
 }
 
 #btn {
@@ -7,6 +27,19 @@ body {
     padding: 10px 20px;
     color: white;
     background: salmon;
+    justify-content: center;
+    display: flex;
+    width: 320px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result-block {
+    margin-left: 40px;
+}
+
+.result-block > *:not(:last-of-type) {
+    margin-bottom: 30px;
 }
 
 #king {
