@@ -21,7 +21,7 @@ btn.addEventListener('click', function(){
 // Преобразую строку в массив
 function convertToArray(str) {
     str = str.replace(/\r?\n/g, "");
-    let arr = str.split('  ');
+    let arr = str.split(' ');
     divideRooms(arr);
 }
 // Создаю массив с разделенными комнатами
