@@ -57,13 +57,13 @@ function sortingRoom(roomsArr) {
         } else if(roomsArr[i][2] == 1 && roomsArr[i][3] == 1) {
             twinResult.push(roomsArr[i][0]);
         } else if(roomsArr[i][1][roomsArr[i][1].length - 1] === 'T' && roomsArr[i][3] > 0) {
-            twinResult.push(roomsArr[i][0] + `(${roomsArr[i][3]}+xEB)`);
+            twinResult.push(roomsArr[i][0] + `(${roomsArr[i][3]}xEB)`);
         } else if(roomsArr[i][1][roomsArr[i][1].length - 1] === 'T') {
             twinResult.push(roomsArr[i][0]);
         } else if(roomsArr[i][2] == 1 && roomsArr[i][3] > 1) {
-            twinResult.push(roomsArr[i][0] + `(${roomsArr[i][3] - 1}+xEB)`);
+            twinResult.push(roomsArr[i][0] + `(${roomsArr[i][3] - 1}xEB)`);
         } else if(roomsArr[i][3] > 0) {
-            otheResult.push(roomsArr[i][0] + `(${roomsArr[i][3]}+xEB)`);
+            otheResult.push(roomsArr[i][0] + `(${roomsArr[i][3]}xEB)`);
         } else {
             restResult.push(roomsArr[i][0]);
         }
@@ -78,7 +78,7 @@ function findBabyBad(arr) {
     let babyBadresult = [];
     for(let i = 0; i < arr.length; i++) {
         if(arr[i][4] > 0) {
-            babyBadresult.push(arr[i][0] + `(${arr[i][4]}+xBB)`);
+            babyBadresult.push(arr[i][0] + `(${arr[i][4]}xBB)`);
         }
     }
     babyBadRooms = babyBadresult;
